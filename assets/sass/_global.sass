@@ -1,0 +1,200 @@
+$main-color: #ae9870
+$black: #131312
+*
+  box-sizing: border-box
+
+@font-face
+  font-family: 'Circe'
+  src: url('../fonts/Circe-Regular.woff') format('woff'),
+  url('../fonts/Circe-Regular.ttf') format('truetype')
+  font-weight: normal
+  font-style: normal
+  font-display: swap
+@font-face
+  font-family: 'Circe'
+  src: url('../fonts/Circe-ExtraLight.woff') format('woff'),
+  url('../fonts/Circe-ExtraLight.ttf') format('truetype')
+  font-weight: 200
+  font-style: normal
+  font-display: swap
+@font-face
+  font-family: 'Circe'
+  src: url('../fonts/Circe-Thin.woff') format('woff'),
+  url('../fonts/Circe-Thin.ttf') format('truetype')
+  font-weight: 100
+  font-style: normal
+  font-display: swap
+@font-face
+  font-family: 'Circe'
+  src: url('../fonts/Circe-Light.woff') format('woff'),
+  url('../fonts/Circe-Light.ttf') format('truetype')
+  font-weight: 300
+  font-style: normal
+  font-display: swap
+@font-face
+  font-family: 'Circe'
+  font-display: swap
+  src: url('../fonts/Circe-Bold.woff') format('woff'),
+  url('../fonts/Circe-Bold.ttf') format('truetype')
+  font-weight: bold
+  font-style: normal
+  font-display: swap
+@font-face
+  font-family: 'Circe'
+  font-display: swap
+  src: url('../fonts/Circe-ExtraBold.woff') format('woff'),
+  url('../fonts/Circe-ExtraBold.ttf') format('truetype')
+  font-weight: 800
+  font-style: normal
+@font-face
+  font-family: 'History Pro 02'
+  src: url('../fonts/HistoryPro-Two.woff2') format('woff2'),
+  url('../fonts/HistoryPro-Two.woff') format('woff'),
+  url('../fonts/HistoryPro-Two.ttf') format('truetype')
+  font-weight: normal
+  font-style: normal
+  font-display: swap
+body
+  font-family: 'Circe'
+  font-weight: 400
+  background-color: #fff
+  color: $black
+p, h1, h2, h3, h4, h5, ul
+  margin: 0
+  padding: 0
+h1, h2, h3, h4, h5
+  font-family: 'History Pro 02'
+input, button, select
+  outline: none
+a:active, a:focus,input, input:active, input:focus
+  outline: 0
+  outline-style: none
+  outline-width: 0
+a:active, a:focus,button::-moz-focus-inner, input[type="reset"]::-moz-focus-inner, input[type="button"]::-moz-focus-inner, input[type="submit"]::-moz-focus-inner, input[type="file"] > input[type="button"]::-moz-focus-inner
+  border: none
+input::placeholder
+  color: #939398
+a
+  text-decoration: none
+  color: inherit
+button
+  cursor: pointer
+input[type=radio]
+  display: none
+.radio-label
+  display: inline-block
+  cursor: pointer
+  position: relative
+  padding-left: 25px
+  margin-right: 0
+  user-select: none
+  &::before
+    content: ""
+    display: inline-block
+    width: 17px
+    height: 17px
+    position: absolute
+    top: 5px
+    left: 0
+    border-radius: 50%
+    border: 1px solid $main-color
+input[type=radio]:checked + .radio-label:before
+  background: url(../img/icons/radio-checked.svg)
+  background-position: center 50%
+  background-repeat: no-repeat
+  background-size: 65%
+.desktop-hidden
+  display: none
+.container
+  width: 90%
+  max-width: 1190px
+  padding: 0 15px
+  margin: 0 auto
+.input-style
+  box-shadow: inset 0px 2px 7px 0px rgba(166, 171, 189, 0.4),inset 0px -2px 7px 0px rgba(250, 251, 255, 0.4)
+  border: 1px solid #fff
+.round-btn
+  &:after
+    animation: rotate 10s infinite linear
+.move-btn
+  &::before
+    animation: move 1.5s infinite linear
+
+@keyframes rotate
+  from
+    transform: translate(-50%, -50%) rotate(0)
+  to
+    transform: translate(-50%, -50%) rotate(360deg)
+@keyframes move
+  0%
+    left: 50%
+  50%
+    left: 60%
+  100%
+    left: 50%
+
+.order-call
+  position: fixed
+  bottom: 50px
+  right: 50px
+  z-index: 99
+  width: fit-content
+  transition: all .3s
+  &__btn
+    @include round-btn(78px)
+    &::before
+      @include round-btn-img(15px, 15px)
+      background-image: url(../img/icons/phone-big.svg)
+    &::after
+      @include round-btn-text(85%)
+      background-image: url(../img/icons/callback.png)
+
+  &__close
+    position: absolute
+    top: -10px
+    right: -10px
+    z-index: 100
+    width: 18px
+    height: 18px
+    border: none
+    background-color: transparent
+    background-image: url(../img/icons/close.svg)
+    background-repeat: no-repeat
+    background-size: cover
+.marquee
+  text-transform: uppercase
+  color: #cbcbcb
+  font-size: 60px
+  line-height: 82px
+  letter-spacing: 0.05em
+  font-family: 'History Pro 02'
+.section-title
+  font-size: 44px
+  line-height: 60px
+  letter-spacing: 0.05em
+.social
+  display: flex
+  justify-content: center
+  &-link
+    margin: 0 9px
+    width: 30px
+    height: 30px
+    & img
+      width: 100%
+      height: 100%
+.logo
+  display: flex
+  align-items: center
+  &__text
+    margin-left: 15px
+.btn
+  width: 100%
+  border: 1px solid $main-color
+  color: $main-color
+  background: transparent
+  transition: all .3s
+  text-align: center
+  text-transform: uppercase
+  display: flex
+  align-items: center
+  justify-content: center

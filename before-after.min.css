@@ -1,0 +1,52 @@
+.ba-slider {
+  position: relative;
+  overflow: hidden
+}
+
+.ba-slider img {
+  width: 100%;
+  display: block;
+  max-width: none
+}
+
+.ba-slider .resize {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 50%;
+  overflow: hidden
+}
+
+.ba-slider .handle {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  margin-left: -2px;
+  background: rgb(255, 255, 255);
+  cursor: ew-resize;
+  
+}
+
+.ba-slider .handle:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: -11px;
+  width: 27px;
+  height: 9px;
+  background-image: url('../img/icons/drag.svg');
+  background-size: cover;
+  background-position: center;
+  transition: all .3s ease;
+
+}
+
+.ba-slider .handle.ba-draggable:after {
+  width: 35px;
+  height:11px;
+  left: -15px;
+ 
+}

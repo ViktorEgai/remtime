@@ -1,0 +1,40 @@
+.before-after
+  padding-top: 130px
+  padding-bottom: 60px
+  &-wrapper
+    display: flex
+    flex-wrap: wrap
+  &__title
+    width: 50%
+    position: relative
+    & span
+      color: $main-color
+    &::before
+      @include ellipse(66%, 60%, 60deg)
+      top: 60%
+      right: -21%
+  &__text
+    font-size: 21px
+    font-weight: 300
+    margin-bottom: 20px
+    text-align: right
+    & span
+      color: $main-color
+      text-transform: uppercase
+  &-block
+    margin-top: 60px
+    width: 100%
+    &__item img
+      width: 100%
+      max-height: 630px
+
+  &__thumb
+    width: 50%
+    &-image
+      height: 120px
+      margin-left: 25px
+      cursor: pointer
+      & img
+        width: 100%
+        height: 100%
+        object-fit: cover

@@ -1,0 +1,39 @@
+.partners
+  padding: 55px 0 120px
+  &-wrapper
+    display: flex
+    justify-content: space-between
+    align-items: center
+  &__title
+    width: 30%
+    text-align: right
+  &-slider
+    position: relative
+    width: 65%
+    margin-left: 25px
+    padding-top: 20px
+    &__item
+      margin: 0 30px
+    &__image
+      margin: 0 auto
+      filter: grayscale(100%)
+      transition: all .3s
+
+    &__btn
+      position: absolute
+      top: 50%
+      transform: translateY(-50%)
+      z-index: 100
+      width: 30px
+      height: 18px
+      border: none
+      background-color: transparent
+      background-size: cover
+      background-position: center
+      background-repeat: no-repeat
+      &--prev
+        background-image: url(../img/icons/prev.svg)
+        left: -40px
+      &--next
+        background-image: url(../img/icons/next.svg)
+        right: -40px

@@ -1,0 +1,332 @@
+.popup
+  position: fixed
+  top: 0
+  left: 0
+  width: 100vw
+  height: 100vh
+  z-index: 100
+  background-color: #131312da
+  display: flex
+  align-items: center
+  justify-content: center
+  transition: all .2s
+  opacity: 0
+  visibility: hidden
+  overflow: auto
+  &-close
+    position: absolute
+    top: 20px
+    right: 20px
+    z-index: 1000
+    width: 30px
+    height: 30px
+    border: none
+    background-color: transparent
+    background-repeat: no-repeat
+    background-size: cover
+    background-image: url(../img/icons/close.svg)
+  &--active
+    opacity: 1
+    visibility: visible
+  &__wrapper
+    background-color: #fff
+    max-width: 640px
+    width: 100%
+    position: relative
+    margin: auto
+  &-title
+    font-size: 36px
+    line-height: 40px
+    letter-spacing: 0.05em
+  &-thanks
+    &__wrapper
+      padding: 40px 30px
+      max-height: 310px
+      transition: all .2s
+      opacity: 0
+      visibility: hidden
+      &--active
+        opacity: 1
+        visibility: visible
+    &__title
+      width: 60%
+      margin-bottom: 30px
+    &__text
+      width: 55%
+      font-size: 18px
+      font-weight: 300
+      line-height: 24px
+      margin-bottom: 30px
+    &__btn
+      border: none
+      background-color: transparent
+      font-weight: 700
+      font-size: 16px
+      color: $main-color
+      text-transform: uppercase
+      padding: 0
+    &__photo
+      position: absolute
+      bottom: 0
+      right: 0
+      z-index: 1
+      &::before
+        @include ellipse(110%,22%,-40deg)
+        top: 54%
+        left: 0
+        z-index: -1
+  &-callback
+    &__wrapper
+      display: flex
+      transition: all .2s
+      opacity: 0
+      visibility: hidden
+      &--active
+        opacity: 1
+        visibility: visible
+    &__info
+      padding: 40px 20px 20px
+    &__title
+      margin-bottom: 25px
+      width: 90%
+    &__text
+      font-size: 16px
+      line-height: 24px
+      margin-bottom: 25px
+    &__form
+      max-width: 240px
+      width: 100%
+      display: flex
+      flex-direction: column
+    &__input
+      padding: 13px 0
+      width: 100%
+      text-align: center
+      font-size: 14px
+      font-weight: 300
+      margin-bottom: 15px
+    &__btn
+      width: 100%
+      text-transform: uppercase
+      display: flex
+      justify-content: center
+      padding: 15px 0
+      margin: 0 auto 30px
+      border: none
+      font-weight: 700
+      font-size: 14px
+      letter-spacing: 0.05em
+      background: rgb(174,152,112)
+      background: linear-gradient(80deg, rgba(174,152,112,1) 0%, rgba(201,182,145,1) 70%)
+    &__checkbox
+      font-size: 11px
+      line-height: 14px
+      font-weight: 300
+      padding-left: 25px
+      position: relative
+      & a
+        text-decoration: underline
+    &__image
+      max-width: 240px
+      height: 460px
+      object-fit: cover
+  &-tab
+
+    &__wrapper
+      max-width: 845px
+      width: 100%
+      position: relative
+      padding: 45px 40px 55px
+      display: flex
+      justify-content: space-between
+    &__block
+      width: 20%
+      margin-right: 30px
+    &__block-item
+      font-family: 'History Pro 02'
+      font-size: 18px
+      text-transform: uppercase
+      margin-bottom: 50px
+      position: relative
+      transition: all .3s
+      cursor: pointer
+      &--active
+        color: $main-color
+        &::before
+          content: ''
+          position: absolute
+          transform: translateY(-50%)
+          top: 50%
+          right: 10px
+          z-index: 110
+          background-image: url(../img/icons/arrow-brown.svg)
+          background-position: center
+          background-size: cover
+          width: 26px
+          height: 14px
+    &__content
+      column-count: 2
+      column-gap: 40px
+      display: none
+      &--active
+        display: block
+      &-title
+        font-size: 14px
+        font-weight: 700
+        color: #939398
+        margin-bottom: 15px
+      &-list
+        list-style-type: none
+        padding: 0
+        font-size: 16px
+        line-height: 24px
+        margin-bottom: 20px
+        max-width: 280px
+    &__btn
+      @include round-btn(170px)
+      position: absolute
+      bottom: -17%
+      left: 40px
+      &:after
+        @include round-btn-text( 85%)
+        background-image: url(../img/icons/order.png)
+      &::before
+        @include round-btn-img(35px, 20px)
+        background-image: url(../img/icons/arrow-right.svg)
+  &-calculator
+    &--active
+      opacity: 1
+      visibility: visible
+    &__wrapper
+      max-width: 840px
+      width: 100%
+      position: relative
+      padding: 40px 25px 30px
+      &::after
+        content: ''
+        position: absolute
+        width: 33%
+        height: 100%
+        top: 0
+        right: 0
+        background-color: #f3f3f3
+    &__block
+      position: relative
+      z-index: 10
+    &__title
+      font-size: 30px
+      line-height: 40px
+      letter-spacing: 0.05em
+      width: 80%
+      margin-bottom: 30px
+    &-form
+      width: 60%
+      &__wrapper
+        display: grid
+        grid-template-columns: minmax(250px, 260px) 1fr
+        grid-template-rows: repeat(2,1fr)
+        grid-gap: 15px 40px
+        margin-bottom: 30px
+      &__select
+        &-block
+          display: flex
+          flex-direction: column
+      &__range
+        &-label
+          width: 70%
+        &-block
+          display: flex
+          flex-wrap: wrap
+          align-items: center
+          & .range
+            width: 100%
+            & .range-input
+              width: 100%
+        &-input
+          width: 70px
+          position: relative
+          & input
+            width: 100%
+            padding: 10px 20px 10px 10px
+            font-weight: 300
+            text-align: center
+          & span
+            position: absolute
+            font-size: 12px
+            top: 50%
+            transform: translateY(-50%)
+            right: 7px
+      &__label
+        font-weight: 800
+        font-size: 12px
+        text-transform: uppercase
+        color: #939398
+        &--range
+          margin-right: auto
+      &__select
+        margin-top: 20px
+        padding: 10px 20px
+        font-weight: 300
+        font-size: 14px
+        appearance: none
+        background-image: url(../img/icons/select-arrow.svg)
+        background-repeat: no-repeat
+        background-size: 10px
+        background-position: 90% center
+      &__bottom
+        display: flex
+        align-items: center
+        justify-content: space-between
+        margin-bottom: 20px
+      &__input
+        font-size: 14px
+        padding: 11px 23px
+        height: 50px
+      &__btn
+        text-transform: uppercase
+        display: flex
+        align-items: center
+        justify-content: center
+        padding: 13px
+        border: none
+        height: 50px
+        font-weight: 700
+        font-size: 13px
+        line-height: 13px
+        letter-spacing: 0.05em
+        background: rgb(174,152,112)
+        background: linear-gradient(80deg, rgba(174,152,112,1) 0%, rgba(201,182,145,1) 70%)
+    &__photo
+      position: absolute
+      bottom: 0
+      right: 0
+      z-index: 10
+      & img
+        display: block
+      &::before
+        @include ellipse(120%,20%,35deg)
+        bottom: 20%
+        z-index: -1
+
+.custom-checkbox
+  position: absolute
+  z-index: -1
+  opacity: 0
+.custom-checkbox+label
+  &::before
+    content: ''
+    position: absolute
+    top: 0
+    left: 0
+    display: inline-block
+    width: 12px
+    height: 12px
+    flex-shrink: 0
+    flex-grow: 0
+    background-color: #f4f4f4
+    background-repeat: no-repeat
+    background-position: center center
+    background-size: 50% 50%
+.custom-checkbox:checked+label::before
+  background-image: url(../img/icons/checkbox.svg)
+  background-size: 80%

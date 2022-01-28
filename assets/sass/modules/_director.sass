@@ -1,0 +1,66 @@
+.director
+  padding-bottom: 85px
+  &-wrapper
+    padding-top: 35px
+    position: relative
+  &-text-block
+    max-width: 60%
+  &__title
+    margin-bottom: 60px
+    font-size: 40px
+    width: 90%
+    & span
+      color: $main-color
+  &__name
+    font-size: 30px
+    margin-bottom: 20px
+  &__descr
+    font-weight: 300
+    font-size: 24px
+    line-height: 32px
+    margin-bottom: 50px
+  &__subtitle
+    font-size: 24px
+    margin-bottom: 50px
+  &__list
+    display: grid
+    grid-template: repeat(2,1fr) / minmax(200px, 230px) minmax(250px, 333px)
+    grid-gap: 35px 60px
+    font-size: 18px
+    line-height: 24px
+
+    &-item
+      counter-increment: t
+      position: relative
+      &::before
+        content: '0'counter(t)
+        position: absolute
+        top: 12px
+        left: -3px
+        z-index: -10
+        font-size: 100px
+        font-family: 'History Pro 02'
+        color: #f3f3f3
+    &-text
+      font-weight: 300
+  &__photo
+    position: absolute
+    bottom: -17%
+    right: -15px
+    z-index: -1
+    height: 116%
+    &::before
+      content: ''
+      position: absolute
+      top: 0
+      left: 0
+      z-index: -10
+      background-image: url(../img/RemTime.png)
+      background-repeat: no-repeat
+      background-position: 65% 0
+      background-size: 70%
+      width: 100%
+      height: 100%
+    &-item
+      width: 100%
+      height: 100%

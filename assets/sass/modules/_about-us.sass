@@ -1,0 +1,61 @@
+.about-us
+  overflow: hidden
+
+  & .js-marquee-wrapper
+    padding-top: 70px
+  &__marquee
+    margin-bottom: 150px
+  &__title
+    margin-bottom: 100px
+    position: relative
+    &::before
+      @include ellipse(46%, 100%, 60deg)
+      top: 100%
+      left: -12%
+  &-wrapper
+    padding-top: 90px
+  &__info
+    display: grid
+    grid-template-columns: repeat(40,1fr)
+    grid-template-rows: repeat(3,1fr)
+    row-gap: 65px
+    &-item
+      max-width: 360px
+      position: relative
+      counter-increment: item
+      &--1
+        grid-column: 12/24
+      &--2
+        grid-column: 28/40
+      &--3
+        grid-row: 2/3
+        grid-column: 4/16
+      &--4
+        grid-row: 2/3
+        grid-column: 22/34
+      &--5
+        grid-row: 3/4
+        grid-column: 12/24
+      &--6
+        grid-row: 3/4
+        grid-column: 28/40
+
+      &::before
+        content: '0'counter(item)
+        position: absolute
+        font-family: 'History Pro 02'
+        font-size: 153px
+        top: -43%
+        left: -10%
+        z-index: -5
+        color: #f3f3f3
+
+    &-title
+      font-family: 'Circe'
+      font-weight: 400
+      font-size: 30px
+      line-height: 36px
+      margin-bottom: 20px
+    & p
+      font-size: 18px
+      line-height: 30px

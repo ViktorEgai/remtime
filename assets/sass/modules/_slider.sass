@@ -1,0 +1,89 @@
+.slider
+  padding-top: 30px
+  padding-bottom: 110px
+  &__title
+    width: 90%
+    margin-bottom: 70px
+  &-block
+    &__card
+      &-wrapper
+        padding: 80px 30px 30px 30px
+        width: 530px
+        height: 100%
+        display: flex
+        justify-content: space-between
+        flex-direction: column
+        position: relative
+        color: #fff
+        overflow: hidden
+        &--video
+          padding-bottom: 60px
+        &::before
+          content: ''
+          position: absolute
+          width: 100%
+          height: 100%
+          top: 0
+          left: 0
+          z-index: -1
+          background-color: #131312
+          background: linear-gradient(90deg, rgba(19,19,18,1) 8%, rgba(19,19,18,0.67) 100%)
+          opacity: 0.8
+      &-image
+        position: absolute
+        top: 0
+        left: 0
+        width: 120%
+        height: 115%
+        z-index: -10
+      &-title
+        font-size: 24px
+        line-height: 36px
+      &-text
+        font-size: 16px
+        line-height: 24px
+        width: 62%
+      &-bottom
+        display: flex
+        align-items: center
+        justify-content: space-between
+      &-play
+        margin-right: 30px
+        width: 73px
+        height: 73px
+        background-image: url(../img/icons/play.svg)
+        background-size: cover
+        background-position: center
+        background-color: transparent
+        border: none
+      &-btn
+        @include round-btn(140px)
+        &:after
+          @include round-btn-text( 85%)
+          background-image: url(../img/icons/consult.png)
+          transform: translate(-50%, -50%)
+          height: 77%
+        &::before
+          @include round-btn-img(35px, 20px)
+          background-image: url(../img/icons/arrow-right.svg)
+    &__photo
+      max-width: 650px
+      width: 100%
+
+    &__item
+      margin: 0 10px
+      height: 360px
+      position: relative
+      &-image
+        width: 100%
+        height: 100%
+        object-fit: cover
+      &-name
+        position: absolute
+        top: 10px
+        left: 10px
+        font-family: 'History Pro 02'
+        text-transform: uppercase
+        font-size: 24px
+        line-height: 20px
+        color: #fff

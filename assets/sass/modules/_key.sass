@@ -1,0 +1,39 @@
+.key
+  padding-top: 120px
+  padding-bottom: 60px
+  &-wrapper
+    display: flex
+    justify-content: space-between
+  &__title
+    width: 54%
+    padding: 150px 0
+    position: sticky
+    top: 0
+    height: fit-content
+    margin-top: -80px
+    &::before
+      @include ellipse(90%,160px,45deg)
+      top: 30%
+      left: -11%
+    & span
+      color: $main-color
+  &-list
+    list-style: none
+    width: 44%
+    &__item
+      font-weight: 300
+      font-size: 30px
+      line-height: 36px
+      position: relative
+      counter-increment: counter
+      &::before
+        content: '0'counter(counter)
+        position: absolute
+        top: 0
+        left: 0
+        z-index: -10
+        font-family: 'History Pro 02'
+        font-size: 120px
+        color: #f3f3f3
+      &:not(:last-child)
+        margin-bottom: 120px

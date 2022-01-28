@@ -1,0 +1,83 @@
+.gallery
+  padding-top: 70px
+  padding-bottom: 65px
+  &-wrapper
+    display: flex
+    justify-content: space-between
+    position: relative
+  &-block
+    flex: 0 0 auto
+    &__btn
+      z-index: 100
+      margin-left: auto
+      display: block
+      @include round-btn(170px)
+      &::before
+        @include round-btn-img(35px, 20px)
+        background-image: url(../img/icons/arrow-right.svg)
+      &::after
+        @include round-btn-text(85%)
+        background-image: url(../img/icons/calc-price.png)
+        background-size: 100%
+    &--small
+      width: 43%
+      height: 100vh
+      overflow-y: hidden
+      position: sticky
+      top: 0
+      scrollbar-width: none
+      &::-webkit-scrollbar
+        display: none
+    &--big
+      width: 54%
+    &__item
+      position: relative
+      width: 100%
+      &:not(:last-child)
+        margin-bottom: 30px
+      & img
+        width: 100%
+      &--with-text
+        padding: 60px 45px 40px
+        color: #fff
+        & img
+          position: absolute
+          top: 0
+          left: 0
+          z-index: -5
+          width: 100%
+          height: 100%
+        & p
+          font-size: 24px
+          line-height: 30px
+          margin-bottom: 75px
+      &-title
+        font-size: 40px
+        line-height: 1.5em
+        margin-bottom: 55px
+      &--guarantee
+        color: #fff
+        padding: 88px 0 108px 56px
+        position: relative
+        & h3
+          font-size: 36px
+          line-height: 40px
+          letter-spacing: 0.01em
+          margin-bottom: 25px
+          &::first-letter
+            font-size: 200px
+            font-weight: 300
+            color: #ae9870
+            line-height: 150px
+            float: left
+            margin-right: 20px
+        & img
+          position: absolute
+          top: 0
+          left: 0
+          z-index: -5
+          width: 100%
+          height: 100%
+        & p
+          font-size: 24px
+          line-height: 30px
